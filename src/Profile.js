@@ -14,7 +14,7 @@ class Profile extends React.Component {
     }
 
     fetchProfile() {
-        fetch('https://photo-app-intro-to-web.herokuapp.com/api/profile', {
+        fetch('https://photo-app-secured.herokuapp.com/api/profile', {
                 headers: getHeaders()
             })
             .then(response => response.json())

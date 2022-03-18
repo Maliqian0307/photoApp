@@ -24,7 +24,7 @@ class Suggestion extends React.Component {
     }
 
     follow() {
-        fetch('https://photo-app-intro-to-web.herokuapp.com/api/following', {
+        fetch('https://photo-app-secured.herokuapp.com/api/following', {
                 headers: getHeaders(),
                 method: 'POST',
                 body: JSON.stringify({ user_id: this.props.user.id })
@@ -36,7 +36,7 @@ class Suggestion extends React.Component {
     }
 
     unfollow() {
-        fetch(`https://photo-app-intro-to-web.herokuapp.com/api/following/${this.state.following_id}`, {
+        fetch(`https://photo-app-secured.herokuapp.com/api/following/${this.state.following_id}`, {
                 headers: getHeaders(),
                 method: 'DELETE'
             })
