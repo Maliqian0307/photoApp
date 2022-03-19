@@ -13,7 +13,7 @@ class Suggestion extends React.Component {
         this.unfollow = this.unfollow.bind(this);
     }
 
-    toggleFollow(ev) {
+    toggleFollow(e) {
         if (this.state.following_id) {
             console.log('unfollow');
             this.unfollow();
@@ -49,11 +49,7 @@ class Suggestion extends React.Component {
     
     
     render () {
-        if (!this.props.suggestion) {
-            return (
-                <div>suggestion</div>  
-            );
-        }
+        
         return (
             <section id={ 'suggestion-' + this.props.suggestion.id }>
                 <img 
