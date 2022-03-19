@@ -31,9 +31,10 @@ class Profile extends React.Component {
         }
         return (
             <div>
-                <img className="pic"
+                <img 
                     src={ this.state.profile.thumb_url } 
-                    alt={ 'Profile pic for ' + this.state.profile.username } />
+                    className="pic"
+                    alt={'Profile pic for '+ this.state.profile.username } />
                 <h1>{ this.state.profile.username }</h1>    
             </div>  
         );

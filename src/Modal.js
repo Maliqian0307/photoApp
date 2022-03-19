@@ -27,18 +27,19 @@ class Modal extends React.Component {
         <div>
           <button className="viewAllComment" onClick={this.handleOpenModal}>view all {this.props.commentLength} comments</button>
           <div>
-          <ReactModal className="container"
+          <ReactModal className="modal"
              isOpen={this.state.showModal}
           >
+            <img src={post.image_url } />
+            <div className="container">
             <h1>
-            <img className="pic" 
-            alt="user pic" 
-            src={post.user.thumb_url} /> 
-            {post.user.username}
+              <img className="pic" 
+              alt="user pic" 
+              src={post.user.thumb_url} /> 
+               <strong>{post.user.username}</strong>
             </h1>
-            <div className="modalAll">
-                <img src={post.image_url } />
                 <div className="allCommentBody">
+               
                 {
                     post.comments.map(comment => {
                         return (

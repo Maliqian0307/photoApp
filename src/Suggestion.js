@@ -23,18 +23,6 @@ class Suggestion extends React.Component {
         }
     }
 
-    follow() {
-        fetch('https://photo-app-secured.herokuapp.com/api/following', {
-                headers: getHeaders(),
-                method: 'POST',
-                body: JSON.stringify({ user_id: this.props.suggestion.id })
-            })
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ following_id: data.id });
-            })
-    }
-
     unfollow() {
         fetch(`https://photo-app-secured.herokuapp.com/api/following/${this.state.following_id}`, {
                 headers: getHeaders(),
@@ -42,11 +30,23 @@ class Suggestion extends React.Component {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                this.setState({ following_id: null });
-                console.log(this.state);
+                this.setState({following_id: null});
             })
     }
+
+    follow() {
+        fetch('https://photo-app-secured.herokuapp.com/api/following', {
+                headers: getHeaders(),
+                method: 'POST',
+                body: JSON.stringify({user_id: this.props.suggestion.id})
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.setState({following_id: data.id});
+            })
+    }
+
+    
     
     render () {
         if (!this.props.suggestion) {
@@ -59,9 +59,9 @@ class Suggestion extends React.Component {
                 <img 
                     src={ this.props.suggestion.thumb_url } 
                     className="pic" 
-                    alt={ 'Profile pic for ' + this.props.suggestion.username } />
+                    alt={ 'pic for ' + this.props.suggestion.username } />
                 <div>
-                    <p>{ this.props.suggestion.username }</p>
+                    <p>{this.props.suggestion.username}</p>
                     <p>suggested for you</p>
                 </div>
                 <div>
