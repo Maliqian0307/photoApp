@@ -20,9 +20,7 @@ class App extends React.Component {
                 </header>
                 <div className="suggestions">
                     <p className="suggestion-text">Suggestions for you</p>
-                    <div>
-                        <Suggestions />
-                    </div>
+                    <Suggestions />
                 </div>
             </aside>
 

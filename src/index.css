@@ -256,7 +256,7 @@ aside header .pic {
 }
 
 .modal-bg {
-    background: rgba(40, 40, 40, 0.8);
+    background: rgba(247, 245, 245, 0.9);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -268,14 +268,20 @@ aside header .pic {
     align-items: center;
 }
 
-.modal-bg .close {
+.viewAllComment{
+    color: rgb(44, 105, 155);
+    background-color: transparent;
+    border-width: 0px;
+}
+
+.close {
     position: fixed;
     top: 10px;
     right: 10px;
     background: transparent;
-    color: white;
+    color: black;
     border: 0;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 div.modal {
@@ -332,7 +338,10 @@ body.modal {
 .hidden {
     display: none;
 }
-
+.allCommentBody{
+    padding: 20px;
+    color: rgb(22, 21, 21);
+}
 .comment {
     display: grid;
     align-items: flex-start;
@@ -357,6 +366,10 @@ body.modal {
     color: rgb(44, 105, 155);
     background-color: transparent;
     border-width: 0px;
+}
+
+.modalAll{
+    display: flex;
 }
 button.like, button.bookmark {
     background: transparent;

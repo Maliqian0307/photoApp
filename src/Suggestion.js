@@ -27,7 +27,7 @@ class Suggestion extends React.Component {
         fetch('https://photo-app-secured.herokuapp.com/api/following', {
                 headers: getHeaders(),
                 method: 'POST',
-                body: JSON.stringify({ user_id: this.props.user.id })
+                body: JSON.stringify({ user_id: this.props.suggestion.id })
             })
             .then(response => response.json())
             .then(data => {
@@ -49,24 +49,24 @@ class Suggestion extends React.Component {
     }
     
     render () {
-        if (!this.props.user) {
+        if (!this.props.suggestion) {
             return (
                 <div>suggestion</div>  
             );
         }
         return (
-            <section id={ 'suggestion-' + this.props.user.id }>
+            <section id={ 'suggestion-' + this.props.suggestion.id }>
                 <img 
-                    src={ this.props.user.thumb_url } 
+                    src={ this.props.suggestion.thumb_url } 
                     className="pic" 
-                    alt={ 'Profile pic for ' + this.props.user.username } />
+                    alt={ 'Profile pic for ' + this.props.suggestion.username } />
                 <div>
-                    <p>{ this.props.user.username }</p>
+                    <p>{ this.props.suggestion.username }</p>
                     <p>suggested for you</p>
                 </div>
                 <div>
                     <button 
-                        aria-label={ 'follow ' + this.props.user.username }
+                        aria-label={ 'follow ' + this.props.suggestion.username }
                         aria-checked="false" 
                         role="switch"
                         onClick={this.toggleFollow}

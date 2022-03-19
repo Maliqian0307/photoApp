@@ -35,7 +35,7 @@ class Suggestions extends React.Component {
         return (
             this.state.suggestions.map(suggestion => {
                 return (
-                    <Suggestion user={suggestion} key={'suggestion-' + suggestion.id} />
+                    <Suggestion suggestion={suggestion} key={'suggestion-' + suggestion.id} />
                 )
             })
         );     

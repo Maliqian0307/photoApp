@@ -4,6 +4,7 @@ import LikeButton from './LikeButton';
 import BookmarkButton from './BookmarkButton';
 import Comments from './Comments';
 import AddComment from './AddComment';
+import Modal from './Modal'
 
 class Post extends React.Component {
     constructor(props){
@@ -62,8 +63,10 @@ class Post extends React.Component {
                                 bookmarkId={post.current_user_bookmark_id}
                                 requeryPost={this.requeryPost} />
                     </div>
+                    {post.likes.length} {post.likes.length > 1 ? `likes` : `like`}
                     <p>{ post.caption }</p>
                     <Comments comments={post.comments} />
+                    <Modal commentLength={post.comments.length} post={post}/>
                     <AddComment requeryPost={this.requeryPost} postId={post.id} />
                 </div> 
             </section> 
